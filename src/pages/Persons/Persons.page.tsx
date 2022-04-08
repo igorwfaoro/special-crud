@@ -1,12 +1,21 @@
 import { useEffect } from "react";
+import { useLoaderService } from "../../services/loader.service";
 import { usePersonService } from "../../services/person.service";
 
 const PersonsPage: React.FC = props => {
 
     const personService = usePersonService();
+    const loader = useLoaderService();
 
     useEffect(() => {
-        personService?.getAll().then(console.log);
+        loader?.show('carregando');
+        personService?.getAll().then(res => {
+            loader?.dismiss();
+            console.log(res);
+        }).catch(error => {
+            loader?.dismiss();
+            throw error;
+        });
     }, []);
     
     return (
@@ -15,4 +24,3 @@ const PersonsPage: React.FC = props => {
 }
 
 export default PersonsPage;
-
