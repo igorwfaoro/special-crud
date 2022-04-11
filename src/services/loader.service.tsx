@@ -10,7 +10,7 @@ const LoaderServiceContext = createContext<LoaderService | undefined>(undefined)
 
 const LoaderServiceProvider: React.FC = props => {
 
-    const [showing, setShowing] = useState(true);
+    const [showing, setShowing] = useState(false);
     const [message, setMessage] = useState<string>();
 
     const show = (message: string = 'Loading...') => {
