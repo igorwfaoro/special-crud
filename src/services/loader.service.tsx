@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { LoaderComponent } from "../components/Loader/Loader.component";
+import LoaderComponent from "../components/Loader/Loader.component";
 
 export interface LoaderService {
     show: (message?: string) => void,

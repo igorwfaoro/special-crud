@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import { Person } from '../models/api/person';
-import { URLS } from "../constants/urls";
-import { http } from "../http/http.common";
+import { URLS } from "../common/constants/urls";
+import { http } from "../common/http/http.common";
 
 export interface PersonService {
     getAll(): Promise<Person[]>;

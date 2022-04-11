@@ -5,14 +5,16 @@ interface LoaderComponentProps {
     message?: string;
 }
 
-export const LoaderComponent: React.FC<LoaderComponentProps> = props => {
+const LoaderComponent: React.FC<LoaderComponentProps> = props => {
 
     return (
         <Box className={styles.container}>
-            <div className="box">
+            <div className={styles.box}>
                 <CircularProgress />
                 <Typography>{props.message}</Typography>
             </div>
         </Box>
     );
 }
+
+export default LoaderComponent;
